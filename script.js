@@ -6,6 +6,7 @@ const myKeys = [
 ];
 
 const myMessageBox = document.getElementById('myMessageBox');
+const myMessageText = document.getElementById('myMessageText');
 const myKeyboard = document.getElementById('myKeyboard');
 
 myKeys.forEach(myKey => {
@@ -13,7 +14,11 @@ myKeys.forEach(myKey => {
     myKeyButton.className = 'myKey';
     myKeyButton.textContent = myKey;
     myKeyButton.addEventListener('click', () => {
-        myMessageBox.textContent += myKey;
+        myMessageText.textContent += myKey;
     });
     myKeyboard.appendChild(myKeyButton);
 });
+
+function myClearMessage() {
+    myMessageText.textContent = '';
+}
